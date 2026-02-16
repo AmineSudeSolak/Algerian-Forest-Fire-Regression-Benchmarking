@@ -1,12 +1,22 @@
-# Algerian-Forest-Fire-Regression-Benchmarking
+Algerian Forest Fire — Regression & Regularization Study
+
 Comparing Linear, Ridge, Lasso and ElasticNet after fixing data leakage and multicollinearity.
-Algerian Forest Fire — Regression & Regularization
 
-Predicting Fire Weather Index (FWI) from meteorological data using multiple regression models.
+Predicting Fire Weather Index (FWI) from meteorological measurements.
 
-This project focuses on understanding how data quality affects model behaviour, not just achieving low error.
+This project focuses on understanding how data quality affects model behavior, not just achieving low error.
 
-What I Practiced in This Project
+Project Motivation
+
+Many beginner ML projects try different algorithms on clean datasets.
+
+This project does the opposite:
+
+Instead of changing the model → fix the data first.
+
+The goal is to observe how preprocessing decisions change regression behavior and stability.
+
+What I Practiced
 
 Handling real-world dirty data
 
@@ -14,37 +24,57 @@ Detecting and fixing multicollinearity
 
 Preventing data leakage
 
-Feature engineering based on domain logic
+Feature engineering based on dataset structure
 
 Comparing regression regularization methods
 
-Problem in the Dataset
+Dataset Problem
 
 The dataset contains measurements from two different climate regions, but the region label is missing as a feature.
-Because of this, the model initially learns averaged behaviour instead of regional patterns.
 
-Additionally, several variables are mathematically derived from each other, causing strong multicollinearity and unstable coefficients in linear regression.
+Because of this, the model initially learns averaged behavior instead of regional patterns.
+
+Additionally, several variables are mathematically derived from each other, causing:
+
+strong multicollinearity
+
+unstable regression coefficients
+
+unreliable interpretations
 
 My Approach
+Data Preparation
 
-Reconstructed the hidden region feature
+Reconstructed hidden region feature
 
-Cleaned invalid observations
+Removed invalid observations
 
-Removed highly correlated predictors (correlation threshold)
+Fixed numeric data types
+
+Converted fire labels to binary values
 
 Standardized features using training data only
 
-Compared regression models
+Feature Reliability
+
+Highly correlated predictors were automatically removed using a correlation threshold.
+
+This reduces:
+
+redundancy
+
+coefficient instability
+
+overfitting risk
 
 Models Compared
 Model	Purpose
-Linear Regression	Baseline
+Linear Regression	Baseline behaviour
 Ridge	Stabilize coefficients
-Lasso	Feature selection
+Lasso	Automatic feature selection
 ElasticNet	Combined regularization
 
-All models tuned using 5-Fold Cross Validation
+All models tuned using 5-Fold Cross Validation.
 
 Key Learnings
 
@@ -61,22 +91,27 @@ Tech Stack
 Python · Pandas · NumPy · Scikit-Learn · Matplotlib · Seaborn
 
 Project Structure
-notebook.ipynb
-data/
-README.md
+notebook.ipynb   → full analysis & modeling workflow
+data/            → dataset
+README.md        → project documentation
 
-Goal of the Repository
+Cezayir Orman Yangını — Regresyon & Regularization Çalışması
 
-Demonstrate a correct machine learning workflow:
-
-Understand data → Fix data → Then model
-
-
-Cezayir Orman Yangını — Regresyon & Regularization
+Linear, Ridge, Lasso ve ElasticNet modellerini data leakage ve multicollinearity giderildikten sonra karşılaştırma çalışması
 
 Meteorolojik veriler kullanılarak Fire Weather Index (FWI) tahmini yapılmıştır.
 
 Bu proje düşük hata elde etmekten ziyade veri kalitesinin model davranışını nasıl etkilediğini anlamaya odaklanır.
+
+Projenin Amacı
+
+Birçok makine öğrenmesi projesi doğrudan model denemeye başlar.
+
+Bu projede yaklaşım tersidir:
+
+Modeli değiştirmek yerine önce veriyi düzelt.
+
+Amaç, ön işleme kararlarının regresyon stabilitesini nasıl etkilediğini gözlemlemektir.
 
 Bu Projede Pratik Ettiklerim
 
@@ -86,54 +121,73 @@ Multicollinearity tespiti ve giderme
 
 Data leakage önleme
 
-Mantıksal feature engineering
+Veri yapısına dayalı feature engineering
 
 Regularization yöntemlerini karşılaştırma
 
 Veri Setindeki Problem
 
-Veri iki farklı iklim bölgesinden geliyor ancak bölge bilgisi özellik olarak verilmemiştir.
-Bu yüzden model başlangıçta bölgesel davranışı değil ortalamayı öğrenir.
+Veri iki farklı iklim bölgesinden gelmektedir ancak bölge bilgisi özellik olarak verilmemiştir.
 
-Ayrıca bazı değişkenler birbirinden türetildiği için güçlü multicollinearity oluşur ve doğrusal regresyon katsayıları kararsız hale gelir.
+Bu nedenle model başlangıçta bölgesel davranış yerine ortalama davranışı öğrenir.
 
-Yaklaşımım
+Ayrıca bazı değişkenler birbirinden türetildiği için:
 
-Gizli bölge değişkenini yeniden oluşturma
+güçlü multicollinearity oluşur
 
-Hatalı gözlemleri temizleme
+katsayılar kararsız hale gelir
 
-Yüksek korelasyonlu değişkenleri kaldırma
+yorumlama güvenilirliği düşer
 
-Standardizasyonu sadece eğitim verisi ile yapma
+Uygulanan Yaklaşım
+Veri Hazırlama
 
-Regresyon modellerini karşılaştırma
+Gizli bölge değişkeni yeniden oluşturuldu
+
+Hatalı gözlemler temizlendi
+
+Veri tipleri düzeltildi
+
+Yangın etiketi binary hale getirildi
+
+Standardizasyon yalnızca eğitim verisi ile yapıldı
+
+Özellik Güvenilirliği
+
+Yüksek korelasyonlu değişkenler otomatik olarak kaldırıldı.
+
+Bu sayede:
+
+gereksiz bilgi azaltıldı
+
+katsayı stabilitesi arttı
+
+overfitting riski düştü
 
 Karşılaştırılan Modeller
 Model	Amaç
-Linear Regression	Temel model
+Linear Regression	Temel davranış
 Ridge	Katsayı stabilizasyonu
 Lasso	Özellik seçimi
 ElasticNet	Kombine regularization
 
 Tüm modeller 5-Fold Cross Validation ile ayarlanmıştır.
 
-Öğrendiklerim
+Öğrenilenler
 
 Performansı en çok veri ön işleme artırır
 
 Multicollinearity yorumlanabilirliği bozar
 
-Regularization modeli stabil yapar
+Regularization modeli daha stabil yapar
 
-Problemi doğru kurmak modelden daha önemlidir
+Doğru problem kurmak modelden daha önemlidir
 
 Kullanılan Teknolojiler
 
 Python · Pandas · NumPy · Scikit-Learn · Matplotlib · Seaborn
 
-Proje Amacı
-
-Doğru makine öğrenmesi iş akışını göstermek:
-
-Veriyi anla → Veriyi düzelt → Sonra modeli kur
+Proje Yapısı
+notebook.ipynb
+data/
+README.md
