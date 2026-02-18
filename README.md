@@ -91,6 +91,109 @@ Tech Stack
 Python · Pandas · NumPy · Scikit-Learn · Matplotlib · Seaborn
 
 Project Structure
+notebook.ipynb
+data/
+README.md
+
+Goal of the Repository
+
+Demonstrate a correct machine learning workflow:
+
+Understand data → Fix data → Then model
+:
+Algerian Forest Fire — Regression & Regularization Study
+
+Comparing Linear, Ridge, Lasso and ElasticNet after fixing data leakage and multicollinearity.
+
+Predicting Fire Weather Index (FWI) from meteorological measurements.
+
+This project focuses on understanding how data quality affects model behavior, not just achieving low error.
+
+Project Motivation
+
+Many beginner ML projects try different algorithms on clean datasets.
+
+This project does the opposite:
+
+Instead of changing the model → fix the data first.
+
+The goal is to observe how preprocessing decisions change regression behavior and stability.
+
+What I Practiced
+
+Handling real-world dirty data
+
+Detecting and fixing multicollinearity
+
+Preventing data leakage
+
+Feature engineering based on dataset structure
+
+Comparing regression regularization methods
+
+Dataset Problem
+
+The dataset contains measurements from two different climate regions, but the region label is missing as a feature.
+
+Because of this, the model initially learns averaged behavior instead of regional patterns.
+
+Additionally, several variables are mathematically derived from each other, causing:
+
+strong multicollinearity
+
+unstable regression coefficients
+
+unreliable interpretations
+
+My Approach
+Data Preparation
+
+Reconstructed hidden region feature
+
+Removed invalid observations
+
+Fixed numeric data types
+
+Converted fire labels to binary values
+
+Standardized features using training data only
+
+Feature Reliability
+
+Highly correlated predictors were automatically removed using a correlation threshold.
+
+This reduces:
+
+redundancy
+
+coefficient instability
+
+overfitting risk
+
+Models Compared
+Model	Purpose
+Linear Regression	Baseline behaviour
+Ridge	Stabilize coefficients
+Lasso	Automatic feature selection
+ElasticNet	Combined regularization
+
+All models tuned using 5-Fold Cross Validation.
+
+Key Learnings
+
+Data preprocessing impacted performance more than model choice
+
+Multicollinearity breaks coefficient interpretability
+
+Regularization improves model stability
+
+Correct problem framing is more important than algorithm complexity
+
+Tech Stack
+
+Python · Pandas · NumPy · Scikit-Learn · Matplotlib · Seaborn
+
+Project Structure
 notebook.ipynb   → full analysis & modeling workflow
 data/            → dataset
 README.md        → project documentation
