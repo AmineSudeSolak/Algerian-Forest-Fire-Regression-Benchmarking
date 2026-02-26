@@ -25,6 +25,7 @@ Unstable regression coefficients
 Unreliable interpretations
 
 My Approach
+
 Data Preparation
 Reconstructed hidden region feature
 
@@ -122,6 +123,7 @@ ElasticNet: Kombine regularization
 Tüm modeller 5-Fold Cross Validation ile ayarlanmıştır.
 
 Öğrenilenler
+
 Performansı en çok veri ön işleme artırır
 
 Multicollinearity yorumlanabilirliği bozar
@@ -131,9 +133,11 @@ Regularization modeli daha stabil yapar
 Doğru problem kurmak modelden daha önemlidir
 
 Kullanılan Teknolojiler
+
 Python, Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
 
 Proje Yapısı
+
 notebook.ipynb
 
 data/
