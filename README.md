@@ -16,7 +16,13 @@ Feature engineering based on dataset structure
 Comparing regression regularization methods
 
 Dataset Problem
-The dataset contains measurements from two different climate regions, but the region label is missing as a feature. Because of this, the model initially learns averaged behavior instead of regional patterns. Additionally, several variables are mathematically derived from each other, causing strong multicollinearity, unstable regression coefficients and unreliable interpretations.
+The dataset contains measurements from two different climate regions, but the region label is missing as a feature. Because of this, the model initially learns averaged behavior instead of regional patterns. Additionally, several variables are mathematically derived from each other, causing:
+
+Strong multicollinearity
+
+Unstable regression coefficients
+
+Unreliable interpretations
 
 My Approach
 Data Preparation
@@ -81,7 +87,13 @@ Veri yapısına dayalı feature engineering
 Regularization yöntemlerini karşılaştırma
 
 Veri Setindeki Problem
-Veri iki farklı iklim bölgesinden gelmektedir ancak bölge bilgisi özellik olarak verilmemiştir. Bu nedenle model başlangıçta bölgesel davranış yerine ortalama davranışı öğrenir. Ayrıca bazı değişkenler birbirinden türetildiği için güçlü multicollinearity oluşur, katsayılar kararsız hale gelir ve yorumlama güvenilirliği düşer.
+Veri iki farklı iklim bölgesinden gelmektedir ancak bölge bilgisi özellik olarak verilmemiştir. Bu nedenle model başlangıçta bölgesel davranış yerine ortalama davranışı öğrenir. Ayrıca bazı değişkenler birbirinden türetildiği için:
+
+Güçlü multicollinearity oluşur
+
+Katsayılar kararsız hale gelir
+
+Yorumlama güvenilirliği düşer
 
 Uygulanan Yaklaşım
 Veri Hazırlama
